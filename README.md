@@ -1,3 +1,18 @@
+# BİTİRME PROJESİ TEZİ
+
+## 📄 Görüntü İşleme Yöntemleri ile Metalik Malzemelerin Mikroyapı Analizi - Tasarım Projesi
+
+Bitirme projesi tezinin tam metnine aşağıdaki linkten ulaşabilirsiniz:
+
+**[GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf](./GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf)**
+
+<object data="./GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf" type="application/pdf" width="100%" height="800px">
+  <embed src="./GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf" type="application/pdf" />
+  <p>PDF dosyasını görüntüleyemiyor musunuz? <a href="./GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf">Buradan indirin</a>.</p>
+</object>
+
+---
+
 # Metalik Malzeme Faz Analizi - YOLO Tabanlı Görüntü İşleme Projesi
 
 ## 🏆 KT Mühendislik Sergisi - 2. Ödül
@@ -6,7 +21,7 @@ Bu proje, metalik malzeme görüntülerinden YOLO (You Only Look Once) derin ö�
 
 ## 📋 Proje Hakkında
 
-Metalik malzemelerin mikroyapı analizi, malzeme bilimi ve mühendisliğinde kritik öneme sahiptir. Geleneksel yöntemler zaman alıcı ve uzman bilgisi gerektirmektedir. Bu proje, YOLO nesne algılama modelini kullanarak metalik malzeme görüntülerindeki farklı fazları otomatik olarak tespit etmeyi ve analiz etmeyi amaçlamaktadır.
+Metalik malzemelerin mikroyapı analizi, malzeme bilimi ve mühendisliğinde kritik öneme sahiptir. Geleneksel yöntemler zaman alıcı ve uzman bilgisi gerektirmektedir. Bu proje, YOLO nesne algılama algoritması kullanarak bu süreci otomatikleştirmekte ve hızlandırmaktadır.
 
 ### Temel Özellikler
 
@@ -49,6 +64,7 @@ pip install -r requirements.txt
 ├── train_model.py                 # Model eğitim scripti
 ├── demo.ipynb                     # Demo Jupyter notebook
 ├── presentation.pdf               # Proje sunumu (PDF)
+├── GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf  # Bitirme projesi tezi
 ├── data/
 │   ├── raw/                       # Ham görüntüler
 │   ├── processed/                 # İşlenmiş görüntüler
@@ -145,6 +161,7 @@ python train_model.py --data data/annotations/ --epochs 100 --batch-size 16
 
 Proje hakkında detaylı bilgi için aşağıdaki dökümanları inceleyebilirsiniz:
 
+- [Bitirme Projesi Tezi (PDF)](GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf) - Tam tez metni
 - [Proje Sunumu (PDF)](presentation.pdf) - Projenin genel sunumu
 - [Metodoloji Dokümantasyonu](docs/methodology.md) - Detaylı metodoloji açıklaması
 - [Sonuçlar ve Bulgular](docs/results.md) - Detaylı sonuçlar ve analizler
