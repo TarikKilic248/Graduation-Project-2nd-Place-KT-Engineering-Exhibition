@@ -42,7 +42,8 @@ class PhaseAnalyzer:
             self.load_model()
         else:
             print(f"Model dosyası bulunamadı: {model_path}")
-            print("Model eğitimi için train_model.py kullanın.")
+            print("Model eğitimi için aşağıdaki komutu çalıştırın:")
+            print("  python train_model.py --data data/annotations/ --epochs 100")
     
     def load_model(self):
         """YOLO modelini yükler"""
@@ -214,8 +215,9 @@ class PhaseAnalyzer:
             List[Dict]: Tüm analiz sonuçları
         """
         # Çıktı klasörünü oluştur
-        Path(output_dir).mkdir(parents=True, exist_ok=True)
-        Path(output_dir + '/images').mkdir(parents=True, exist_ok=True)
+        output_path = Path(output_dir)
+        output_path.mkdir(parents=True, exist_ok=True)
+        (output_path / 'images').mkdir(parents=True, exist_ok=True)
         
         # Desteklenen görüntü formatları
         extensions = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']
@@ -237,8 +239,8 @@ class PhaseAnalyzer:
                 all_results.append(results)
                 
                 # Sonuçları görselleştir ve kaydet
-                output_path = f"{output_dir}/images/{image_file.stem}_result.jpg"
-                self.visualize_results(results, save_path=output_path, show=False)
+                result_output_path = str(Path(output_dir) / 'images' / f"{image_file.stem}_result.jpg")
+                self.visualize_results(results, save_path=result_output_path, show=False)
                 
             except Exception as e:
                 print(f"Hata ({image_file.name}): {e}")
@@ -250,7 +252,7 @@ class PhaseAnalyzer:
     
     def _generate_batch_summary(self, results_list: List[Dict], output_dir: str):
         """Batch işleme için özet rapor oluşturur"""
-        summary_path = f"{output_dir}/batch_summary.txt"
+        summary_path = str(Path(output_dir) / 'batch_summary.txt')
         
         with open(summary_path, 'w', encoding='utf-8') as f:
             f.write("=" * 60 + "\n")
@@ -262,8 +264,9 @@ class PhaseAnalyzer:
             # Genel istatistikler
             total_detections = sum(r['phase_statistics']['total_detections'] 
                                   for r in results_list)
-            avg_confidence = np.mean([r['phase_statistics']['average_confidence'] 
-                                     for r in results_list if r['phase_statistics']['average_confidence'] > 0])
+            confidence_values = [r['phase_statistics']['average_confidence'] 
+                               for r in results_list if r['phase_statistics']['average_confidence'] > 0]
+            avg_confidence = np.mean(confidence_values) if confidence_values else 0.0
             
             f.write(f"Toplam Tespit: {total_detections}\n")
             f.write(f"Ortalama Güven Skoru: {avg_confidence:.2%}\n\n")

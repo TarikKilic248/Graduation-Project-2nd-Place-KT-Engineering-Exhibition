@@ -11,9 +11,9 @@ from ultralytics import YOLO
 import yaml
 
 
-def create_dataset_config(data_dir: str, output_file: str = 'dataset.yaml'):
+def create_yolo_dataset_config(data_dir: str, output_file: str = 'dataset.yaml'):
     """
-    Veri seti konfigürasyon dosyası oluşturur
+    YOLO formatında veri seti konfigürasyon dosyası oluşturur
     
     Args:
         data_dir: Veri seti dizini
@@ -91,8 +91,8 @@ def train_model(data_config: str, epochs: int = 100, batch_size: int = 16,
         box=7.5,
         cls=0.5,
         dfl=1.5,
-        pose=12.0,
-        kobj=2.0,
+        pose=12.0,      # YOLO v8 keypoint detection loss weight
+        kobj=2.0,       # YOLO v8 objectness loss weight
         label_smoothing=0.0,
         nbs=64,
         hsv_h=0.015,
@@ -221,7 +221,7 @@ def main():
     args = parser.parse_args()
     
     # Veri seti konfigürasyonu oluştur
-    config_file = create_dataset_config(args.data)
+    config_file = create_yolo_dataset_config(args.data)
     
     # Modeli eğit
     train_model(
