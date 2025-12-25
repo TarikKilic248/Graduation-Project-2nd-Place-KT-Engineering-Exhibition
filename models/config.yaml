@@ -1,0 +1,26 @@
+# YOLO Model Configuration for Phase Detection
+
+# Dataset paths
+path: /path/to/dataset  # Dataset root directory
+train: images/train     # Train images (relative to 'path')
+val: images/val         # Validation images (relative to 'path')
+test: images/test       # Test images (relative to 'path')
+
+# Number of classes
+nc: 5
+
+# Class names
+names:
+  0: Ferrit
+  1: Perlit
+  2: Austenit
+  3: Martenzit
+  4: Bainit
+
+# Class descriptions (Turkish)
+descriptions:
+  0: 'Ferrit fazı - BCC kristal yapısı, yumuşak ve sünektir'
+  1: 'Perlit fazı - Ferrit ve sementit lamellerinin oluşturduğu yapı'
+  2: 'Austenit fazı - FCC kristal yapısı, yüksek sıcaklıkta kararlı'
+  3: 'Martenzit fazı - BCT yapısı, çok sert ve gevrek'
+  4: 'Bainit fazı - Ferrit ve karbür karışımı, orta sertlik'
