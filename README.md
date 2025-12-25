@@ -1,7 +1,6 @@
 # BİTİRME PROJESİ TEZİ
 
 ## 📄 Görüntü İşleme Yöntemleri ile Metalik Malzemelerin Mikroyapı Analizi - Tasarım Projesi
-
 Bitirme projesi tezinin tam metnine aşağıdaki linkten ulaşabilirsiniz:
 
 **[GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf](./GÖRÜNTÜ_İŞLEME_YÖNTEMLERİ_İLE_METALİK_MALZEMELERİN_MİKROYAPI_ANALİZİ_Tasarım_Projesi.pdf)**
